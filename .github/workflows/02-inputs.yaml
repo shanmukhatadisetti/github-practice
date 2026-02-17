@@ -29,5 +29,5 @@ jobs:
     steps:
     - name: print the input tags to STDOUT
       run: echo tags are ${{ inputs.tags }}
-    - name: print the environment
+    - name: print the  environment
       run: echo environment are ${{ inputs.environment }}
