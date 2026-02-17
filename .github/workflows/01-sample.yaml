@@ -1,0 +1,10 @@
+name: helloworld
+on: [push]
+jobs:
+  hello:
+    runs-on: ubuntu-latest
+    steps:
+      - name: step1
+        run: echo "hello world"
+      - name: step2
+        run: echo "hello github actions"
