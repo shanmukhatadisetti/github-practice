@@ -1,0 +1,33 @@
+inputs:
+on:
+  workflow_dispatch:
+    inputs:
+      loglevel:
+        description: "log level"
+        required: true
+        default: "warning"
+        type: choice
+        options:
+        - info
+        - warning
+        - debug
+      print_tags:
+        description: "True to print to STDOUT"
+        required: true
+        type: "boolean"
+      tags:
+        description: "Test scenario tags"
+        required: true
+        type: string
+      environment:
+        description: "environment to run tests against"
+        required: true
+        type: environment
+jobs:
+  print:
+    runs: ubuntu-latest
+    steps:
+    - name: print the input tags to STDOUT
+      run: echo tags are ${{ inputs.tags }}
+    - name: print the environment
+      run: echo environment are ${{ inputs.environment }}
